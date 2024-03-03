@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portofolio Geea Aanastasya</title>
+		<link rel="stylesheet" href="style.css" />
+		
+	</head>
+	<style>
+/* CSS Dasar */
+html {
+            scroll-behavior: smooth;
+            font-family: "Montserrat", sans-serif;
+        }
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #262626; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+}
+
+header {
+    background-color: #1a1a1a; /* Dark header background color */
+    color: #fff;
+    text-align: left;
+    padding: 1em 20px;
+}
+
+nav {
+    background-color: #582c5b; /* Dark purple */
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #8f3d8f; /* Light purple on hover */
+}
+
+section {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #3a3a3a; /* Dark gray */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 10px;
+    color: #e0e0e0;
+}
+
+h2, h3 {
+    color: #f06292; /* Light pink */
+}
+
+p {
+    line-height: 1.6;
+    color: #ccc;
+}
+#experience ul,
+    #hardskills ul,
+    #softskills ul {
+        text-align: left; /* Set text alignment to left in lists */
+        padding-left: 40px; /* Remove default padding */
+    }
+
+.profile-picture {
+    border-radius: 50%;
+    max-width: 200px;
+    height: auto;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-image:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #444; /* Dark footer background color */
+    color: #fff;
+}
+
+/* Media Queries untuk tampilan mobile */
+@media only screen and (max-width: 600px) {
+    section {
+        width: 100%;
+        padding: 20px; /* Adjust padding for responsive view */
+    }
+
+    .project-image {
+        width: 45%; /* Menyesuaikan lebar gambar proyek untuk tampilan mobile */
+    }
+    
+    #experience ul,
+    #hardskills ul,
+    #softskills ul {
+        text-align: left; /* Set text alignment to left in lists */
+        padding-left: 20px; /* Remove default padding */
+        
+    }
+
+    /* ... (existing styles) */
+}
+
+
+/* Tambahkan gaya untuk tombol hamburger */
+.menu-toggle {
+    display: none; /* Hide the hamburger menu by default */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Tampilan mobile */
+@media only screen and (max-width: 600px) {
+    /* ... (existing styles) */
+
+    .menu-toggle {
+        display: flex; /* Display the hamburger menu on mobile */
+    }
+
+    header {
+        margin-left: 0; /* Reset margin for mobile view */
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust the font size for mobile view */
+    }
+
+    nav {
+        display: none; /* Hide the regular navigation on mobile */
+    }
+
+    .menu-open {
+        left: 0;
+    }
+    
+    header {
+        text-align: center; /* Add text alignment for mobile view */
+    }
+
+    h1 {
+        font-size: 28px; /* Adjust the font size for mobile view */
+    }
+
+    footer {
+        padding: 1em 20px; /* Adjust padding for responsive view */
+    }
+
+    .social-media-icons {
+        position: static;
+        margin-top: 20px; /* Add margin for spacing on mobile */
+        text-align: center;
+    }
+
+    .social-media-icons a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    footer {
+        position: relative; /* Add position for mobile view */
+    }
+
+    .social-media-icons {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .social-media-icons img {
+        width: 30px; /* Adjust the size as needed */
+        height: auto;
+    }
+}
+
+/* Responsive Header */
+@media only screen and (min-width: 601px) {
+    header {
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* Responsive Footer */
+@media only screen and (max-width: 600px) {
+    footer {
+        padding: 1em 20px; /* Adjust padding for responsive view */
+    }
+
+    .social-media-icons {
+        position: static;
+        margin-top: 20px; /* Add margin for spacing on mobile */
+        text-align: center;
+    }
+
+    .social-media-icons a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+}
+footer {
+        text-align: center;
+        padding: 1em 0;
+        background-color: #444; /* Dark footer background color */
+        color: #fff;
+        position: relative;
+    }
+
+    .social-media-icons {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .social-media-icons a {
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .social-media-icons img {
+        width: 30px; /* Adjust the size as needed */
+        height: auto;
+    }
+
+
+
+</style>
+	<body>
+		<header>
+			<h1>Portofolio Geea Aanastasya</h1>
+		</header>
+
+		<!-- Tambahkan tombol hamburger -->
+		<div class="menu-toggle" id="mobile-menu">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+
+		<nav class="mobile-nav">
+			<a href="#about">Tentang Saya</a>
+			<a href="#education">Pendidikan</a>
+			<a href="#organization">Organisasi</a>
+			<a href="#experience">Pengalaman</a>
+			<a href="#hardskills">Hard Skills</a>
+			<a href="#softskills">Soft Skills</a>
+			<a href="#projects">Projects</a>
+		</nav>
+		
+
+
+		<section id="about">
+			<img
+				class="profile-picture"
+				src="/asset/WhatsApp Image 2024-01-29 at 19.37.54.jpeg"
+				alt="Profil Saya"
+			/>
+			<h2>DESIGNER UI/UX</h2>
+			<h3>Geea Aanastasya Suratman</h3>
+			<p>
+				Halo! Saya Geea Anastasya Suratman, desainer grafis 18 tahun dari SMKN
+				69 Jakarta. Saya bersemangat mengejar passion dan kreativitas dalam
+				desain grafis, terus mengasah keterampilan, dan mencari peluang untuk
+				berkembang di industri ini.
+			</p>
+		</section>
+
+		<section id="education">
+			<h2>Pendidikan</h2>
+			<h3>SMK Negeri 69 Jakarta</h3>
+			<p>Program Keahlian: Sistem Informasi Jaringan dan Aplikasi</p>
+			<p>Tahun: 2021 - Sekarang</p>
+		</section>
+
+		<section id="organization">
+			<h2>Organisasi MPK</h2>
+			<p>
+				Saya mengikuti Organisasi Majelis Perwakilan Kelas atau biasa disebut
+				MPK, saya menjabat di Organisasi MPK pada periode 2022-2023.
+			</p>
+		</section>
+
+		<section id="experience">
+			<h2>Experience</h2>
+			<ul>
+				<li>
+					Berpartisipasi mengikuti sertifikasi Desain Grafis Junior oleh BNSP
+				</li>
+				<li>
+					Test of English for International Communication (TOEIC) 2023. Score:
+					510
+				</li>
+				<li>Juara 1 seleksi Lomba Kompetensi Siswa tingkat sekolah</li>
+				<li>Peserta Lomba Kompetensi Siswa (LKS) tingkat Wilayah</li>
+			</ul>
+		</section>
+
+		<section id="hardskills">
+			<h2>Hard Skills</h2>
+			<ul>
+				<li>
+					Design Web (UI/UX) <br />
+					Figma, Whimsical, Canva
+				</li>
+				<br />
+				<li>
+					Programming <br />
+					HTML, CSS, Python, C++, PHP
+				</li>
+				<br />
+				<li>Design Grafis <br />Photoshop, Adobe Ilustrator</li>
+				<br />
+				<li>Networking <br />Cisco Packet Tracer, VirtualBox, Winbox</li>
+				<br />
+				<li>
+					Microsoft Office <br />Microsoft Word, Microsoft Excel, Microsoft
+					Access
+				</li>
+			</ul>
+		</section>
+
+		<section id="softskills">
+			<h2>Soft Skills</h2>
+			<ul>
+				<li>Content management</li>
+				<li>Designing</li>
+				<li>Time management</li>
+				<li>Leadership</li>
+				<li>Decision Making</li>
+				<li>Copywriting</li>
+				<li>Critical Thinking</li>
+				<li>Public Speaking</li>
+				<li>Problem Solving</li>
+			</ul>
+		</section>
+
+		<section id="projects">
+			<h2>Projects</h2>
+			<div class="project-container">
+				<a href="https://www.figma.com/file/BoZiHtzpA2spGx4zpFx0LV/Project-Expo-2023?type=design&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img class="project-image" src="/asset/Frame 17.png" alt="Proyek 1" />
+				</a>
+				<a href="https://www.figma.com/file/3SkuAq8IOSpG7QHz9F1lLa/LKS-1?type=design&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img
+						class="project-image"
+						src="asset/Slide 16_9 - 14.png"
+						alt="Proyek 2"
+					/>
+				</a>
+				<a href="https://www.figma.com/file/3SkuAq8IOSpG7QHz9F1lLa/LKS-1?type=design&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img
+						class="project-image"
+						src="/asset/Slide 16_9 - 4.png"
+						alt="Proyek 3"
+					/>
+				</a>
+				<a href="https://www.figma.com/file/3SkuAq8IOSpG7QHz9F1lLa/LKS-1?type=design&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img
+						class="project-image"
+						src="asset/Slide 16_9 - 6.png"
+						alt="Proyek 4"
+					/>
+				</a>
+				<a href="https://www.figma.com/file/3SkuAq8IOSpG7QHz9F1lLa/LKS-1?type=design&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img
+						class="project-image"
+						src="/asset/Slide 16_9 - 7.png"
+						alt="Proyek 5"
+					/>
+				</a>
+				<a href="https://www.figma.com/file/yo8HyN6AlIoTIpAihlGsF3/Makeup?type=design&node-id=0%3A1&mode=dev&t=oYq5jx92KjWawM2H-1">
+					<img
+						class="project-image"
+						src="asset/Wireframe - 2.png"
+						alt="Proyek 6"
+					/>
+				</a>
+				<a href="https://www.figma.com/file/sPgIaVgVUro8jao1MlCGpi/Perpustakaan?type=design&node-id=0%3A1&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img class="project-image" src="asset/Frame 1.png" alt="Proyek 7" />
+				</a>
+
+				<a href="https://www.figma.com/file/uWIRNOOC8jFnUFFWLgyb6z/F2M?type=design&mode=dev&t=xfVfkg0apJmHpuQv-1">
+					<img
+						class="project-image"
+						src="/asset/Desktop - 8.png"
+						alt="Proyek 8"
+					/>
+				</a>
+                <a href="/">
+					<img
+						class="project-image"
+						src="/asset/GEEA_ANASTASYA_PRAKTIK_DGM_POSTER PROMOSI SEKOLAH.jpg"
+						alt="Proyek 8"
+					/>
+				</a>
+			</div>
+		</section>
+
+
+			<footer>
+				<p>&copy; 2024 Portofolio Saya. Dibuat dengan ❤️</p>
+			</footer>
+		
+<!-- Add this script before </body> -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  $(document).ready(function () {
+        console.log("Document ready!");
+        $("#mobile-menu").click(function () {
+            console.log("Menu toggle clicked!");
+            $(".mobile-nav").toggleClass("menu-open");
+        });
+    });
+</script>
+
+	</body>
+</html>
